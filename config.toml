@@ -4,6 +4,9 @@ theme = "ayu_evolve"
 line-number = "absolute"
 color-modes = true
 
+[editor.lsp]
+display-inlay-hints = true
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
