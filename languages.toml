@@ -8,7 +8,7 @@ injection-regex = "rs|rust"
 file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 shebangs = ["rust-script", "cargo"]
-auto-format = false
+auto-format = true
 comment-tokens = ["//", "///", "//!"]
 
 [language-server.clangd]
@@ -44,7 +44,85 @@ injection-regex = "go"
 file-types = ["go"]
 roots = ["go.work", "go.mod"]
 auto-format = true
+formatter = { command = "goimports" }
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
 language-servers = [ "gopls", "golangci-lint-lsp" ]
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "(js|javascript)"
+language-id = "javascript"
+file-types = ["js", "mjs", "cjs", "rules", "es6", "pac", { glob = ".node_repl_history" }, { glob = "jakefile" }]
+shebangs = ["node"]
+roots = [ "package.json" ]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "(ts|typescript)"
+language-id = "typescript"
+file-types = ["ts", "mts", "cts"]
+shebangs = ["deno", "bun", "ts-node"]
+roots = [ "package.json", "tsconfig.json" ]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "css"
+scope = "source.css"
+injection-regex = "css"
+file-types = ["css", "scss"]
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "vscode-css-language-server" ]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[language-server.emmet-ls]
+args = ["--stdio"]
+command="emmet-ls"
+
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml", "cshtml"]
+block-comment-tokens = { start = "<!--", end = "-->" }
+language-servers = [ "vscode-html-language-server","emmet-ls",]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[language-server.sql-language-server]
+command = "sql-language-server"
+args = ["up", "--method", "stdio"]
+
+[[language]]
+name = "sql"
+language-servers = [ "sql-language-server" ]
+
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]

@@ -1,5 +1,5 @@
-theme = "ayu_evolve"
-#theme = "MyCustom"
+theme = "MyCustom"
+# theme = "ayu_evolve"
 
 [editor]
 line-number = "absolute"
