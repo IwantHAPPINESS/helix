@@ -10,6 +10,7 @@ roots = ["Cargo.toml", "Cargo.lock"]
 shebangs = ["rust-script", "cargo"]
 auto-format = true
 comment-tokens = ["//", "///", "//!"]
+indent = { tab-width = 4, unit = "    " }
 
 [language-server.clangd]
 command = "clangd"
