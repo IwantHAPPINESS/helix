@@ -3,12 +3,12 @@ command = "rust-analyzer"
 
 [[language]]
 name = "rust"
+file-types = ["rs"]
+auto-format = true
 scope = "source.rust"
 injection-regex = "rs|rust"
-file-types = ["rs"]
-roots = ["Cargo.toml", "Cargo.lock"]
 shebangs = ["rust-script", "cargo"]
-auto-format = true
+roots = ["Cargo.toml", "Cargo.lock"]
 comment-tokens = ["//", "///", "//!"]
 indent = { tab-width = 4, unit = "    " }
 
@@ -17,12 +17,12 @@ command = "clangd"
 
 [[language]]
 name = "c"
-scope = "source.c"
-injection-regex = "c"
 file-types = ["c"] 
+scope = "source.c"
 comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
+injection-regex = "c"
 language-servers = [ "clangd" ]
+block-comment-tokens = { start = "/*", end = "*/" }
 indent = { tab-width = 2, unit = "  " }
 
 [[language]]

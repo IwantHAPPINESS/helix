@@ -2,8 +2,10 @@ theme = "MyCustom"
 # theme = "ayu_evolve"
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 color-modes = true
+end-of-line-diagnostics = "hint"
+clipboard-provider = "windows"
 
 [editor.lsp]
 display-inlay-hints = true
@@ -37,3 +39,6 @@ tabpad = "·"
 render = true
 #character = "|" 
 #skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
