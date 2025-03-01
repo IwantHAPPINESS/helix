@@ -1,11 +1,12 @@
-theme = "MyCustom"
+# theme = "MyCustom"
+theme = "autumn_night"
 # theme = "ayu_evolve"
 
 [editor]
 line-number = "relative"
 color-modes = true
 end-of-line-diagnostics = "hint"
-clipboard-provider = "windows"
+clipboard-provider = "wayland"
 
 [editor.lsp]
 display-inlay-hints = true
@@ -14,7 +15,6 @@ display-inlay-hints = true
 insert = "bar"
 normal = "block"
 select = "underline"
-
 
 [editor.file-picker]
 hidden = false
@@ -34,11 +34,10 @@ tab = "→"
 newline = "⏎"
 tabpad = "·"
 
-
 [editor.indent-guides]
 render = true
-#character = "|" 
-#skip-levels = 1
+# character = "|" 
+# skip-levels = 1
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
